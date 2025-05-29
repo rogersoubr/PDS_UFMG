@@ -1,0 +1,54 @@
+Todas as funções dos exercícios 1 a 4 serão implelmentadas no módulo prova1.h. Inclua esse módulo em programas que usaem essas funções
+
+PARTE 1 - VERIFICAÇÃO DE PIN( 
+    Nos exercícios 1 a 5, seu objetivo será implementar funções que verifiquem e registrem um código PIN fomecido pelo usuário. Esse código deve obedecer estritamente aos seguintes
+    critérios:
+
+    - Conter apenas letras maiúsculas (A a Z);
+    - Conter exatamente um dígito numérico (de O a 9);
+    - Não conter letras minúsculas ou qualquer outro tipo de caractere.
+
+    Para auxiliá-lo na verificação dos caracteres, considere os valores da tabela ASCH:
+
+    - Dígitos numéricos: códigos de 48 ('0') a 57 (19);
+    - Letras maiúsculas: códigos de 65 ('A') a 90 ('Z);
+    - Letras minúsculas: códigos de 97 (a') a 122 (z).|
+
+
+    QUESTÃO 1 — Classificação de Caracteres (2 pontos)
+    Implemente a função tipoChar, que recebe como parâmetro um caractere e retorna:
+
+    - O se for um dígito numérico ('0' a '9');
+    - 1 se for uma letra maiúscula ('A' a 'Z');
+    - 2 se for uma letra minúscula ('a' a 'z');
+    - -1 caso contrário.
+
+
+    QUESTÃO 2 — Verificação de Quantidade de Dígitos (2 pontos) E
+    Implemente a função contemApenasUmNumero, que recebe como parâmetros tês
+    caracteres e retorna 1 se exatamente um deles for um número, e 8 caso contrário.
+
+
+    QUESTÃO 3 - Conversão de Minúscula para Maiúscula (3 pontos)
+    Implemente a função coloca Maiuscula, que recebe um ponteiro para char e altera o conteúdo apontado, convertendo a letra minúscula para maiúscula (se for o caso). Não faça nada se o caractere for uma letra maiúscula ou número. Dica: Note que a diferença entre os valores inteiros de 'a'e 'A' é exatamente 32.
+    Ponto extra: Utilize uma operação bit-a-bit para fazer a conversão.
+
+
+    QUESTÃO 4 - Verificação de Caracteres Válidos (2 pontos)
+    Implemente a função Verifica que recebe como parâmetros três caracteres e retorna:
+    - 1 se todos forem letras ou números
+    - a se algum deles não for.
+
+
+    Questão 5- Programa Principal (3 pontos) eb A
+    Complete a função main para que ela:
+    A isnoremibid oosqae mu me aotno
+        1. Leia três caracteres do teclado;
+        2. Verifique se há exatamente um número entre eles e se todos são letras ou números. Se não, exiba "Erro!" e termine o programa.
+        3. Caso sim, modifique os caracteres lidos do teclado para que o printf no final do programa imprima o PIN apenas com letras maiúsculas. Converta os caracteres para maiúsculo, caso necessário (use a função colocaMaiuscula).
+    Aqui você deve chamar as funções que você implementou nas questões anteriores; considere que todas estão corretas. Dica: leia novamente as instruções da prova.
+    #include <stdio.h>
+
+
+
+)
