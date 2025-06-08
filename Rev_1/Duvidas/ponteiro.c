@@ -7,8 +7,8 @@
 
 int main(){
     int x = 10;
-    int *p = &x;
-    // p é um ponteiro para int
+    int* p = &x;
+    // *p é um ponteiro para int
     //&x pega o endereço de memória
     //p recebe o local de local de memória
 
@@ -16,7 +16,7 @@ int main(){
     printf("MOSTRANDO POSICAO NA MEMORIA: %p\n",&x);
 
     //SE VOCE TEM SO O LOCAL DE MOMORIA:
-    printf("CONTEUDO DO LOCAL DE MEMORIA: %d\n", *p);//mostra 10
+    printf("CONTEUDO DO LOCAL DE MEMORIA: %d\n", *p);//mostra 10, se tirar o * e formatar para %p, mostra a memória de x
 
 
 

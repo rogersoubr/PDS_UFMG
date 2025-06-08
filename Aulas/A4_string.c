@@ -10,10 +10,10 @@ int main(){
     //vai mostrar o endereco, por causa do %p
     printf("Endereco: %p\n",str);
     printf("Endereco: %p\n",str+1);
-    printf("Endereco: %p\n",str+1);
+    printf("Endereco: %p\n",str+2);
 
     //vai imprimei o valor, po causa do %c
-    printf("Valor do endereco: %c\n",*(str+0));
+    printf("Valor do endereco: %c\n",*(str+1));
     printf("Valor do endereco: %c\n",*(str+1));
     printf("Valor do endereco: %c\n",*(str+2));
     printf("Valor do endereco: %c\n",*(str+3));
