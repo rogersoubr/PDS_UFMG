@@ -3,7 +3,9 @@
         "*.embeddedhtml": "html",
         "math.h": "c",
         "stdlib.h": "c",
-        "instant.h": "c"
+        "instant.h": "c",
+        "stdio.h": "c",
+        "sstream": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

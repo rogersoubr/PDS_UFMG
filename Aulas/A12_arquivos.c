@@ -1,3 +1,5 @@
+//gcc A12_arquivos.c
+// ./a.exe
 #include <stdio.h>
 
 #define MAX 50
@@ -12,9 +14,9 @@ void imprimeMatriz(float M[][MAX], int l, int c) {
 }
 
 int main() {
-    FILE* arquivo;
+    FILE *arquivo;
     // r, w ou a
-    arquivo = fopen("matriz.txt", "r");
+    arquivo = fopen("A14_arquivo.txt", "r");
     
     int l, c;
     fscanf(arquivo, "%d %d", &l, &c);
@@ -23,17 +25,20 @@ int main() {
     float M1[MAX][MAX];
     float M2[MAX][MAX];
     float SOMA[MAX][MAX];
+
     for (int i = 0; i < l; i++) {
         for (int j = 0; j < c; j++) {
             fscanf(arquivo, "%f", &M1[i][j]);
         }
     }
+
     for (int i = 0; i < l; i++) {
         for (int j = 0; j < c; j++) {
             fscanf(arquivo, "%f", &M2[i][j]);
             SOMA[i][j] = M1[i][j] + M2[i][j];
         }
     }
+
     printf("M1:\n");
     imprimeMatriz(M1, l, c);
     printf("\n");

@@ -18,8 +18,8 @@ int main(){
     // printf("Token: '%s'\n",token);
 
     while(token != NULL){
-    token = strtok(NULL," ");//quando não passa nada, vai continuar até a segundo
-    printf("Token: '%s'\n",token);
+        token = strtok(NULL," ");//quando não passa nada, vai continuar até a segundo
+        printf("Token: '%s'\n",token);
     }
 
 
