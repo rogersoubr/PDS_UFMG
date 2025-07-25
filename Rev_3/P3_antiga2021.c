@@ -6,11 +6,11 @@
 //garantia do professor: nenhuma linha de arquivo terá mais que 2000 caracteres
 #define MAX_TAM_LINHA 2000
 
-// typedef struct Aluno {
-//     char *nome;
-//     int id;
-//     float rsg;
-// }Aluno;
+typedef struct Aluno {
+    char *nome;
+    int id;
+    float rsg;
+}Aluno;
 
 
 int ePalindromo(int num){
@@ -45,33 +45,87 @@ int ehElfica(char *str) {
     return verificaLetras(str, 0, 0, 0);
 }
 
-// void transformaStr(char *str) {
-//     //Questao 3
-// }
+char maior(char *str) {
+    if (*str == '\0') return 0;
+    char m = maior(str + 1);
+    return (*str > m) ? *str : m;
+}
 
-// Aluno* buscaRSG(char nome_arquivo[]) {
-//     //Questao 4
-//     return NULL;
-// }
+void transformaStr(char *str) {
+    if (*str == '\0') return;
+    *str = maior(str);
+    transformaStr(str + 1);
+}
+//QUESTAO 4
+Aluno* buscaRSG(char nome_arquivo[]) {
+    FILE *fp = fopen(nome_arquivo, "r");
+    if (!fp) return NULL;
 
-// void buscaRisco(char* nome_arquivo) {
-//     //Questao 5
-// }
+    Aluno *melhor = NULL;
+    int id;
+    char nome[1000];
+    float rsg;
 
-// int ** geraListaAdjacencias(int **M, int n) {
-//     //Questao 6
-//     return NULL;
-// }
+    while (fscanf(fp, "%d,%[^,],%f\n", &id, nome, &rsg) == 3) {
+        if (!melhor || rsg > melhor->rsg) {
+            free(melhor);
+            melhor = malloc(sizeof(Aluno));
+            melhor->id = id;
+            melhor->rsg = rsg;
+            melhor->nome = malloc(strlen(nome) + 1);
+            strcpy(melhor->nome, nome);
+        }
+    }
+    fclose(fp);
+    return melhor;
+}
+
+//QUESTAP 5
+void buscaRisco(char* nome_arquivo) {
+    FILE *entrada = fopen(nome_arquivo, "r");
+    FILE *saida = fopen("risks.txt", "w");
+    if (!entrada || !saida) return;
+
+    int id, ur, pr;
+    float tmed, risco;
+
+    while (fscanf(entrada, "%d %d %d %f", &id, &ur, &pr, &tmed) == 4) {
+        risco = (tmed / ur) - pr;
+        if (risco > 1) {
+            fprintf(saida, "%d %.2f\n", id, risco);
+        }
+    }
+    fclose(entrada);
+    fclose(saida);
+}
+
+int contarAmigos(int **M, int n, int pessoa) {
+    int count = 0;
+    for (int j = 0; j < n; j++) {
+        if (M[pessoa][j] == 1) count++;
+    }
+    return count;
+}
+
+int** geraListaAdjacencias(int **M, int n) {
+    int **L = malloc(n * sizeof(int*));
+    for (int i = 0; i < n; i++) {
+        int numAmigos = contarAmigos(M, n, i);
+        L[i] = malloc((numAmigos + 1) * sizeof(int));
+        int k = 0;
+        for (int j = 0; j < n; j++) {
+            if (M[i][j] == 1) {
+                L[i][k++] = j;
+            }
+        }
+        L[i][k] = -1;
+    }
+    return L;
+}
 
 // // Para testes
-// int minha_main()
-// {
-//     return -1;
-// }
-
-int main(){
-
-    char palavra[100];
+int minha_main(){
+        char palavra[100];
 
     printf("Digite uma palavra: ");
     scanf("%s",&palavra);
@@ -82,4 +136,6 @@ int main(){
         printf("A palavra nao eh ELfica.\n");
 
     return 0;
+    return -1;
 }
+
