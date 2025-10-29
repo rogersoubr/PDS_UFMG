@@ -1,0 +1,6 @@
+1 nao eh primo
+2 eh primo
+5 eh primo
+8 nao eh primo
+9 nao eh primo
+7 eh primo

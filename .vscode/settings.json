@@ -6,7 +6,8 @@
         "instant.h": "c",
         "stdio.h": "c",
         "sstream": "c",
-        "cmath": "c"
+        "cmath": "c",
+        "cstdio": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

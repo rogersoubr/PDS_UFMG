@@ -12,6 +12,8 @@ int main(){
     //&x pega o endereço de memória
     //p recebe o local de local de memória
 
+    printf(" \nPARTE 1\n ");
+
     //MOSTRANDO POSICAO NA MEMORIA:
     printf("MOSTRANDO POSICAO NA MEMORIA: %p\n",&x);
 
