@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Executar",//nome do executor em run-> start debugging
+            "type": "cppdbg",//tipo de executar, esse é gdb
+            "request": "launch",// "launch" inicia o programa do zero. ("attach" se conectaria a um programa já rodando).
+            "program": "${workspaceFolder}/main",// O arquivo que ele VAI EXECUTAR. Tem que ser o mesmo nome que você colocou no "-o" lá no tasks.json
+            "preLaunchTask": "Compilar",// Antes de executar, o VS Code vai rodar a tarefa chamada "Compilar" vulgo tasks.json.
+            "args": [
+                "-fThreading"
+            ],
+            "stopAtEntry": false,// Se true, o programa pausa automaticamente na linha "int main()".
+            "cwd": "${workspaceFolder}",// O diretório em que o programa vai ser executado.
+            "environment": [],// Variáveis de ambiente do SO, caso seu programa precise.
+            "externalConsole": true,// Abre uma janela de terminal preta separada para rodar (útil no Windows). Se false, roda no terminal integrado do VS Code.
+            "windows": {// Configurações específicas para se você abrir este projeto no Windows.
+                "MIMode": "gdb",// O tipo de depurador usado.
+                "setupCommands": [
+                    // Comandos internos para o GDB formatar e exibir as variáveis bonitinhas (pretty-printing) quando você inspecionar durante o debug.
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    },
+
+                    {
+                        "description": "Set Disassembly Flavor to Intel",
+                        "text": "-gdb-set disassembly-flavor intel",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+
+        }
+    ]
+}
