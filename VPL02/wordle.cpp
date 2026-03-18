@@ -9,7 +9,7 @@ int main(){
     string linha;
     string chave[41];//agora tu podes criar array de string pae
     string jogada;
-    string resp; //para ir incrementando com a resposta do jogo espaco(MAIUSCULO)
+    string nao_tem = ""; //para ir incrementando com a resposta do jogo espaco(MAIUSCULO)
     int tentativa=0;
     int escolhida;
     ifstream arqv("palavras.txt", fstream::in);
@@ -21,42 +21,50 @@ int main(){
     for(int i = 0; i<= escolhida; i++){
         getline(arqv, chave[i]);
     }
+    arqv.close();
 
     while(tentativa <= 5){
         cout << "Chute uma palavra maiuscula: ";
         cin >> jogada;
 
+        string result = "";//INCREMENTAL DE m***M
+
         if(jogada != chave[escolhida]){
             for(int i = 0; i <= 5; i++){
-                
+                bool letra_encontrada = false;
+
                 for(int j = 0; j <= 5; j++){
                     //if para cout nas letra na mesma posição
                     if(jogada[i] == chave[escolhida][j] && j == i){//mesmo sendo string consigo pegar o lugar da letra
-                        cout << jogada[j];
+                        letra_encontrada = true;
+                        if (j == i){
+                            result += jogada[i]; //tem e posicao correta M
+                        }else{
+                            result += (char)((int)jogada[i] + 32);
+                        }
                         break;
-                    }else if(jogada[i] == chave[escolhida][j]){
-                        cout << (char)((int)jogada[i] + 32);
-                        break;
-                    }
-                    else{
-                        //aqui coloco o *, mais tranquilo
-                        cout << "*";
+                }
+            }
+            //ponto de vista i
+            if(letra_encontrada == false){
+                result += '*';//padrao
+                bool ja_tem = false;
+                for (char c : nao_tem) {
+                    if (c == jogada[i]) {
+                        ja_tem = true;
                         break;
                     }
                 }
-            }
-            /*
-            
-            //faço um outro if para verifiar se a letra EM VISAO do i existe e imprimir entre espaco(MAIUSCULO)
-            for(int k = 0; k <= 5; k++){
-                for(int l = 0; l <= 5; l++){
-                    if(jogada[k] != chave[escolhida][l]){
-                                    
-                    }
+                if (!ja_tem) {
+                    nao_tem += jogada[i];
                 }
             }
-            */
 
+            
+        }
+
+
+        cout << result << " (" << nao_tem << ")" << endl;
         tentativa++;        
         }
         
@@ -73,12 +81,6 @@ int main(){
     cout << (char)((int)jogada[0] + 32) << endl;
     cout << chave[escolhida][0] << endl;
     */
-
-
-
-
-
-    arqv.close();
 
     return 0;
 }
