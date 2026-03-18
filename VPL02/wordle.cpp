@@ -7,7 +7,7 @@ using namespace std; //esse danado que faz nao precisar usar std::
 
 int main(){
     string linha;
-    string chave[41];//agora tu podes criar array de string pae
+    string chave[42];//agora tu podes criar array de string pae
     string jogada;
     string nao_tem = ""; //para ir incrementando com a resposta do jogo espaco(MAIUSCULO)
     int tentativa=0;
@@ -16,7 +16,6 @@ int main(){
     if(!arqv.is_open()){
         return 1;
     }
-    cout << "Digite o numero da palavra [1,40]: ";
     cin >> escolhida;
     for(int i = 0; i<= escolhida; i++){
         getline(arqv, chave[i]);
@@ -24,7 +23,6 @@ int main(){
     arqv.close();
 
     while(tentativa <= 5){
-        cout << "Chute uma palavra maiuscula: ";
         cin >> jogada;
 
         string result = "";//INCREMENTAL DE m***M
@@ -35,7 +33,7 @@ int main(){
 
                 for(int j = 0; j <= 5; j++){
                     //if para cout nas letra na mesma posição
-                    if(jogada[i] == chave[escolhida][j] && j == i){//mesmo sendo string consigo pegar o lugar da letra
+                    if(jogada[i] == chave[escolhida][j]){//mesmo sendo string consigo pegar o lugar da letra
                         letra_encontrada = true;
                         if (j == i){
                             result += jogada[i]; //tem e posicao correta M
@@ -60,21 +58,18 @@ int main(){
                     }
                 }
             }
-        cout << result << " (" << nao_tem << ")" << endl;
+        cout << result << " " << "(" << nao_tem << ")";
         tentativa++;        
-        } else{
+        } else if(jogada == chave[escolhida]){
+            cout << chave[escolhida] << " ( )" << endl;
             cout << "GANHOU!";
+            break;
+        }else{
+            cout << "PERDEU! " << chave[escolhida];
+            break;
         }
-        
     }
-    cout << "PERDEU! " << chave[escolhida];
-
-    /*
-    cout << (int)jogada[0] << endl;
-    cout << ((int)jogada[0] + 32) << endl;
-    cout << (char)((int)jogada[0] + 32) << endl;
-    cout << chave[escolhida][0] << endl;
-    */
+    
 
     return 0;
 }
