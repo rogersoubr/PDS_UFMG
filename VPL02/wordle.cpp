@@ -43,32 +43,26 @@ int main(){
                             result += (char)((int)jogada[i] + 32);
                         }
                         break;
-                }
-            }
-            //ponto de vista i
-            if(letra_encontrada == false){
-                result += '*';//padrao
-                bool ja_tem = false;
-                for (char c : nao_tem) {
-                    if (c == jogada[i]) {
-                        ja_tem = true;
-                        break;
                     }
                 }
-                if (!ja_tem) {
-                    nao_tem += jogada[i];
+                //ponto de vista i
+                if(letra_encontrada == false){
+                    result += '*';//padrao
+                    bool ja_tem = false;
+                    for (char c : nao_tem) {
+                        if (c == jogada[i]) {
+                            ja_tem = true;
+                            break;
+                        }
+                    }
+                    if (!ja_tem) {
+                        nao_tem += jogada[i];
+                    }
                 }
             }
-
-            
-        }
-
-
         cout << result << " (" << nao_tem << ")" << endl;
         tentativa++;        
-        }
-        
-        else{
+        } else{
             cout << "GANHOU!";
         }
         
