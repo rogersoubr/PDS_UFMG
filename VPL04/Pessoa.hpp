@@ -1,21 +1,20 @@
 //Roger Souza Brandão - 2025108154
-//contrato  
+//contrato,especificação
 #ifndef PESSOA_H
-#define PESSOA_H
+#define PESSOA_H //cria a macro pessoa
 
-#include <cmath>
 #include <iostream>
-
+#include <cmath>
 
 struct Pessoa{
-    double x, y;//atributos
+    double x, y;//atriburos
 
-    //metodo construtor
-    Pessoa (double x, double y);
+    Pessoa(double x, double y);
 
-    //metodo
-    double getY();
-    double getX();
+    double getY();//metodos de retorno
+    double getX();//metodos de retorno
     void mover(double dx, double dy);
 };
+
+
 #endif
