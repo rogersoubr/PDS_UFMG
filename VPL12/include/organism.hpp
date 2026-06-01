@@ -21,8 +21,8 @@ class Organism {
         virtual bool tryPredation(Grid& grid); //predacao da celula, predador vai sobrescrever
         virtual bool isPreyFor(const Organism* predator) const; //eh presa do predador
 
-        void setMoved(bool m); //
-        bool hasMoved() const;
+        void setMoved(bool m); //define a flag de movimento do turno atual
+        bool hasMoved() const; //consulta a flag de movimento do turno atual
 
         int getX() const;
         int getY() const;
