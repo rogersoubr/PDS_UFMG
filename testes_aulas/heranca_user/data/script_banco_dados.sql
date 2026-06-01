@@ -13,7 +13,8 @@ insert into Usuario (nome) values
 
 CREATE TABLE Adm (
     id TEXT PRIMARY KEY DEFAULT (lower(hex(randomblob(16)))),
-    User_id TEXT NOT NULL
+    user_id TEXT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Usuario(id)
 );
 
 select * from Usuario;
