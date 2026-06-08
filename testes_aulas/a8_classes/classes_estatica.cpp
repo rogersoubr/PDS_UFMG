@@ -1,4 +1,4 @@
-lass ClasseAtributoEstatico {
+class ClasseAtributoEstatico {
  public:
 
  static int numero;
