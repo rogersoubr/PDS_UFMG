@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+class TestObject {
+public:
+ int atributo;
+ TestObject(int valor) : atributo(valor) {}
+ ~TestObject() {
+ cout << "~TestObject" << atributo << endl;
+ }
+};
+
+int main() {
+/*
+cout << "Antes" << endl;
+ int i = 0;
+ while(i<5) {
+ TestObject o(i);
+ i++;
+ }
+ cout << "Depois" << endl;
+ return 0
+*/
+ TestObject o1(1);
+ TestObject* o2 = new TestObject(2);
+ delete o2;
+return 0;
+}
