@@ -16,7 +16,7 @@ int main(){
     string cmt[100];//comentarios
     int incdc_pp[100];//incidencia de palavras proibidas
 
-    cout<<"digite as palavra proibida (quantidade palavra1 palavra2...): ";
+    //cout<<"digite as palavra proibida (quantidade palavra1 palavra2...): ";
     cin >> pp_num;
     getline(cin, pp_full);
     stringstream palavras_proibidas(pp_full);
@@ -33,7 +33,7 @@ int main(){
         return 1;
     }
 
-    cout<<"digite o comentario: ";
+    //cout<<"digite o comentario: ";
     getline(cin, cmt_full);
     stringstream comentarios_completos(cmt_full);
     string auxcmt;
@@ -45,10 +45,10 @@ int main(){
         }
     }
     for (int j= 0; j < cmt_num; j++){
-        for (int k =0; k <= pp_num; k++){
+        for (int k =0; k < pp_num; k++){
             if(cmt[j] == pp[k]){
-                incdc_pp[k] =+1;
-                for (int l = 0; l <= cmt[j].length(); l++){
+                incdc_pp[k]++;
+                for (int l = 0; l < cmt[j].length(); l++){
                     cmt[j][l] = 42;
                 }
             }
