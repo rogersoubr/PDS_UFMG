@@ -4,7 +4,7 @@
 //2. vou receber "comentário"
 //3. tenho que remover essas proibidas do comentário. Imprimir censurado
 // imprimir "palavra que foi removida e quantidade"
-
+//gambiarra
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -19,6 +19,7 @@ int main(){
     string pp[100];//palavras proibidas
     string cmt_full;//comentario completos
     string cmt[100];//comentarios
+    int incdc_pp[100];//incidencia de palavras proibidas
 
     cout<<"digite as palavra proibida (quantidade palavra1 palavra2...): ";
     cin >> pp_num;
@@ -36,28 +37,36 @@ int main(){
         cout<<"\nerro, quantidade de palavras proibidas incoerentes"<<endl;
         return 1;
     }
-    
+
     cout<<"digite o comentario: ";
     getline(cin, cmt_full);
     stringstream comentarios_completos(cmt_full);
     string auxcmt;
-    int cmt_num =0;
+    int cmt_num =0;//numero de comentarios
     while(getline(comentarios_completos, auxcmt, ' ')) {
         if(auxcmt != ""){
             cmt[cmt_num] = auxcmt;
             cmt_num++;
         }
     }
+    for (int j= 0; j < cmt_num; j++){
+        for (int k =0; k <= pp_num; k++){
+            if(cmt[j] == pp[k]){
+                incdc_pp[k] =+1;
+                for (int l = 0; l <= cmt[k].length(); l++){
+                    cmt[j][l] = 42;
+                }
+            }
+            continue;
+        }
+        //tem que tirar esse ultimo espaco
+        cout<<cmt[j]<<" ";
+    }
+    for (int j = 0; j < pp_num; j++){
+        cout <<"\nPalavra "<< pp[j]<< " substituida "<< incdc_pp[j] <<" vez(es).";
+    }
     
-    // for (int i = 0; i < count; i++){
-    //     /* code */
-    //     for (int k = 0; k <= j; k++){
-    //         if(cmt[k])
-    //     }
-    // }
     
-
     
-
     return 0;
 }
