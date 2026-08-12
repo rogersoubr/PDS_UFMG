@@ -1,9 +1,4 @@
 //rogersoubr - 2025108154
-
-//1. vou receber "num lista das palavras probidas"
-//2. vou receber "comentário"
-//3. tenho que remover essas proibidas do comentário. Imprimir censurado
-// imprimir "palavra que foi removida e quantidade"
 //gambiarra
 #include <iostream>
 #include <string>
@@ -53,11 +48,10 @@ int main(){
         for (int k =0; k <= pp_num; k++){
             if(cmt[j] == pp[k]){
                 incdc_pp[k] =+1;
-                for (int l = 0; l <= cmt[k].length(); l++){
+                for (int l = 0; l <= cmt[j].length(); l++){
                     cmt[j][l] = 42;
                 }
             }
-            continue;
         }
         //tem que tirar esse ultimo espaco
         cout<<cmt[j]<<" ";
