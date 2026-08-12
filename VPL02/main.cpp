@@ -14,7 +14,7 @@ int main(){
     string pp[100];//palavras proibidas
     string cmt_full;//comentario completos
     string cmt[100];//comentarios
-    int incdc_pp[100];//incidencia de palavras proibidas
+    int incdc_pp[100] = {0};//incidencia de palavras proibidas
 
     //cout<<"digite as palavra proibida (quantidade palavra1 palavra2...): ";
     cin >> pp_num;
@@ -48,7 +48,8 @@ int main(){
         for (int k =0; k < pp_num; k++){
             if(cmt[j] == pp[k]){
                 incdc_pp[k]++;
-                for (int l = 0; l < cmt[j].length(); l++){
+                for (size_t l = 0; l < cmt[j].length(); l++){
+                    //tive que usar size_t porque nao dru bom como int
                     cmt[j][l] = 42;
                 }
             }
