@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 
 ///rogersoubr - 2025108154
 // 0) Crie uma função que receba três variveis inteiras como parâmetro, da seguinte forma:
@@ -11,9 +13,6 @@ void funcao(int &ref, int* ponteiro, int valor){
     valor++;
     cout<<ref<<" "<<ponteiro<<" "<< valor<<endl;
 }
-
-#include <iostream>
-using namespace std;
 
 int main(){
 
