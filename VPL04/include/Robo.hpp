@@ -2,17 +2,17 @@
 
 #ifndef ROBOD_H
 #define ROBO2D_H
-#include "include/Ponto2D.hpp"
+#include "../include/Ponto2D.hpp"
 
 using namespace std;
 
 struct Robo{
     int id;
-    Ponto2D plano;
+    Ponto2D ponto_plano;
     double _energia = 100;//Após o deslocamento, a distância percorrida deve ser deduzida do atributo '_energia', decomposição vetorial e cinemática?
     bool _com_bola;
 
-    Robo(int id, Ponto2D plano, bool _com_bola);//id, plano, combola
+    Robo(int id, Ponto2D ponto_plano, bool _com_bola);//id, plano, combola
 
     void mover(double v, double th, double t);//v (magnitude do vetor velocidade), th (orientação, em radianos, do vetor velocidade, t (o tempo que a velocidade foi aplicada)
 

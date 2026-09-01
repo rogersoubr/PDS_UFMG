@@ -2,8 +2,8 @@
 #include <iostream>
 #include <iomanip>
 
-#include "Ponto2D.hpp"
-#include "Robo.hpp"
+#include "../include/Ponto2D.hpp"
+#include "../include/Robo.hpp"
 
 using namespace std;
 
