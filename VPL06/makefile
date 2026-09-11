@@ -1,5 +1,5 @@
 COMPILADORCPP = g++#falando qual é o compilador
-CPPFLAGS = -Wall -Wextra -Iinclude
+CPPFLAGS = -std=c++11 -Wall -Wextra -Werror -O2 -Iinclude
 
 #LOCAIS DE PASTAS----------------------------
 PASTA_SRC_ENTIDADES = src/entidades
@@ -19,20 +19,20 @@ CIRCULO_O = $(PASTA_BUILD)/Circulo.o
 COMPILADOS = $(MAIN_O) $(PONTO_O) $(CIRCULO_O)
 
 #esse é o arquivo que está complando o código
-TARGET = programa
+TARGET = vpl_execution
 
 #DEFINE COMO ALVO PRINCIPAL DE COMPILAÇÃO O TARGET (tem o caminho dele)
 all: $(PASTA_BUILD) $(TARGET)
 
 #TEM QUE GARANTIR QUE A BUILD EXISTE
 $(PASTA_BUILD): 
-    mkdir -p $(PASTA_BUILD)
+	mkdir -p $(PASTA_BUILD)
 
 #arquivos dependencia .cpp para os alvo .o----------------------------------
 $(MAIN_O): $(MAIN_SRC)
 	$(COMPILADORCPP) $(CPPFLAGS) -c $(MAIN_SRC) -o $(MAIN_O)
 
-$(PONTO_O): $(PONTO_SRC)
+$(PONTO_O): $(PONTO_SRC) include/Ponto.hpp
 	$(COMPILADORCPP) $(CPPFLAGS) -c $(PONTO_SRC) -o $(PONTO_O)
 
 $(CIRCULO_O): $(CIRCULO_SRC)
