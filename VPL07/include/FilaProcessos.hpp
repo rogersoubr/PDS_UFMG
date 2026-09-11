@@ -5,8 +5,16 @@
 #include <string>
 #include "../include/Processo.hpp"
 
+struct No{//nozinho da lista
+    Processo* processo;//referencia para um processo
+    No* prox;//proximo processo referente a esse no
+};
+
 class FilaProcessos{
 public:
+    No* inicio;
+    int id_interno;
+    
     FilaProcessos(/* args */);
 
     void adicionar_processo(std::string nome, int prioridade);//Método que recebe os dados de um processo e o adiciona na lista de maneira ORDENADA considerando a prioridade informada. A ordenação da prioridade deve ser DECRESCENTE, ou seja, do maior para o menor. Logo, um processo de prioridade ALTA (2) deve ficar à frente na fila que um processo com prioridade BAIXA (0). Em caso de prioridades iguais, a ordem de inserção deve ser respeitada, ou seja, o último processo inserido fica ao final daquele grupo de prioridade. Além disso, no momento da inserção deve ser atribuída ao processo um id único, que é um número inteiro sequencial e gerenciado pela própria fila (deve começar com valor 1).

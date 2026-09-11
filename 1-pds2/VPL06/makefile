@@ -30,13 +30,13 @@ $(TARGET): $(OBJS)
 	$(compiladorC++) $(OBJS) -o $(TARGET)
 
 $(MAIN_OBJ): $(MAIN_SRC)
-	$(compiladorC++) $(FLAGS) -c $< -o $@
+	$(compiladorC++) $(FLAGS) -c $(MAIN_SRC) -o (MAIN_OBJ)
 
 $(CIRCULO_OBJ): $(CIRCULO_SRC)
-	$(compiladorC++) $(FLAGS) -c $< -o $@
+	$(compiladorC++) $(FLAGS) -c $(CIRCULO_SRC) -o (CIRCULO_OBJ)
 
 $(PONTO_OBJ): $(PONTO_SRC)
-	$(compiladorC++) $(FLAGS) -c $< -o $@
+	$(compiladorC++) $(FLAGS) -c$(PONTO_SRC) -o (PONTO_OBJ)
 
 clean:
 	rm -rf $(BUILD_DIR) $(TARGET)
