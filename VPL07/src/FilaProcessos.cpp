@@ -7,8 +7,7 @@
 #include <iomanip> //casa decimal
 
 FilaProcessos::FilaProcessos(){
-    this->id_interno = 1;
-    inicio = nullptr;
+
 };
 
 void FilaProcessos::adicionar_processo(std::string nome, int prioridade){
