@@ -1,12 +1,13 @@
 #include <iostream>
 using namespace std;
 
-typedef struct No{
+struct No{
     int valor;
-    struct No* proximo;
-}No;
+    No* proximo;
+};
 
 void insere_inicio(No** lista, int num){
+    //tem que colocar que recebe um ponteiro para ponteiro, porque o proximo é um ponteiro
     No* novo = new No;
     if(novo){
         novo -> valor = num;//essa seta é como se colocasse um *ponteiro.variavel
