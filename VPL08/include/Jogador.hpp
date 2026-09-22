@@ -1,3 +1,4 @@
+//rogersoubr
 #ifndef JOGADOR_H
 #define JOGADOR_H
 #include <string>
@@ -11,4 +12,4 @@ class Jogador{
         std::string getNome() const;
         char getSimbolo() const;
 };
-#endif JOGADOR_H
+#endif
