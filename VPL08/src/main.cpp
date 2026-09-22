@@ -1,6 +1,5 @@
 #include "Partida.hpp"
 #include <iostream>
-#include "../include/Jogador.hpp"
 
 int main() {
     Jogador jogador1("Ana", 'X');
