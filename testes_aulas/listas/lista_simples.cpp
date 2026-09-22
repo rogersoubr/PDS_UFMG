@@ -6,23 +6,20 @@ struct Node {
     Node* prox; 
 };
 
-Node inserir_inicio(Node** vira_seguinte, int valor){
+Node inserir_inicio(Node** lista, int valor){
     Node* novo_no = new Node;
     if (novo_no){   
         novo_no->valor = valor;
-        novo_no->prox = *vira_seguinte;
+        novo_no->prox = *lista;
+        *lista = novo_no; 
     }else{
         cout<<"erro ao locar memória"<<endl;
     }
 }
 
-void libera_memoria(Node x){
-
-}
-
 int main(){
-    Node* lista_completa = new Node;
-    inserir_inicio(&lista_completa, 5);
+    Node* lista = new Node;
+    inserir_inicio(&lista, 5);
 
     return 0;
 }
