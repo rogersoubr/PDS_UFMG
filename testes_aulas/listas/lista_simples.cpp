@@ -6,10 +6,11 @@ struct Node {
     Node* prox; 
 };
 
-Node inserir_inicio(Node** lista, int valor){
+void inserir_inicio(Node** lista, int valor){
     Node* novo_no = new Node;
     if (novo_no){   
         novo_no->valor = valor;
+        cout<<"Valor da *lista: "<< *lista<<endl;
         novo_no->prox = *lista;
         *lista = novo_no; 
     }else{
@@ -19,8 +20,8 @@ Node inserir_inicio(Node** lista, int valor){
 
 int main(){
     Node* lista = new Node;
+    cout<<"Valor da *lista: "<< lista<<endl;
     inserir_inicio(&lista, 5);
 
     return 0;
 }
-
