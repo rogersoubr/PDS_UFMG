@@ -5,39 +5,26 @@
 #include <iostream>
 using namespace std;
 
-int ganhouPorlinhas(char simbolo){
-    int ganhou =0;
-}
-
-int ganhouPorColuna(int linha, char simbolo){
-
-}
-int ganhouPorColunas(char simbolo){
-
-}
-int ganhouPorDiagonal(int linha, char simbolo){
-
-}
-int ganhouPorDiagonalSec(int linha, char simbolo){
-
-}
-
 Tabuleiro::Tabuleiro(){
-    for (int i = 0; i < 2; i++){
-        for (int j = 0; j < 2; j++){
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 3; j++){
          this->tabuleiro[i][j] = ' ';
         }
     }
     
 }
+
 //possivelmente errado
-bool Tabuleiro::validaJogada(int linha, int coluna, char simbolo){
-    if( (0>=linha<=2) && (0>=coluna<=2) && (simbolo= ('x' || 'o')) &&(this->tabuleiro[linha][coluna] = ' ') ){
-        return true;
-    }else{
+bool Tabuleiro::validaJogada(int linha, int coluna, char simbolo) {
+    //teste separado
+    if (linha < 0 || linha > 2 || coluna < 0 || coluna > 2) {
         return false;
-    };
-};
+    }
+    if( (simbolo != 'X' || simbolo != 'O') &&(this->tabuleiro[linha][coluna] != ' ') ){
+        return false;
+    }
+    return true;
+}
 
 void Tabuleiro::fazerJogada(int linha, int coluna, char simbolo){
     this->tabuleiro[linha][coluna]= simbolo;
