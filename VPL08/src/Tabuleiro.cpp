@@ -31,12 +31,12 @@ void Tabuleiro::fazerJogada(int linha, int coluna, char simbolo){
 }
 
 char Tabuleiro::verificarEstadoPartida(){
-    //LINHAS
+    //LINHAS E COLUNAS
     for (int i = 0; i < 3; i++) {
         if (tabuleiro[i][0] != ' ' && tabuleiro[i][0] == tabuleiro[i][1] && tabuleiro[i][1] == tabuleiro[i][2]) {
             return tabuleiro[i][0];
         }
-        //COLUNHAS = TRANSPOSTA DE [linha][colunas]
+        //COLUNHAS = TRANSPOSTA DE [linha][colunas] =>[colunas][linha]
         if (tabuleiro[0][i] != ' ' && tabuleiro[0][i] == tabuleiro[1][i] && tabuleiro[1][i] == tabuleiro[2][i]) {
             return tabuleiro[0][i];
         }

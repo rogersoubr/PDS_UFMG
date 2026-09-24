@@ -13,7 +13,7 @@ class Partida{
         Jogador* atual;//ponteiro para o jogador cuja vez é a atual.
     public:
         Partida(Jogador jogador1, Jogador jogador2);//Método construtor que inicializa internamente os dois jogadores e define o jogador inicial (quem começa jogando).
-        Jogador& getJogadorAtual();//Executa a jogada do jogador atual na posição (linha, coluna) do tabuleiro
+        Jogador& getJogadorAtual();//Retorna uma referência para o jogador cuja vez é a atual.
         void executarJogada(int linha, int coluna);//Executa a jogada do jogador atual na posição (linha, coluna) do tabuleiro
         char statusPartida();//Retorna o estado atual da partida consultando o tabuleiro. Os valores possíveis são 'X', 'O', 'E' ou 'P' (conforme definido em verificarEstadoPartida())
         void exibirPartida();//Exibe o estado atual do tabuleiro chamando o método imprimir() do tabuleiro.
