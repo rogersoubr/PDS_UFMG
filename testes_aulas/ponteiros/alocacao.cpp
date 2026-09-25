@@ -2,6 +2,7 @@
 
 int main(){
     //nao eh bom deixar sem nullptr
+    int* idade = new int(25);
     int *a, b;//todas estão no stack
     b= 10;
     a= new int;//coloca a valendo uma área de memória do heap
