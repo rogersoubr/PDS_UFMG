@@ -2,11 +2,7 @@
 #define LIST_H
 #include <iostream>
 using namespace std;
-
-struct No {
-    int valor;
-    No* proximo;
-};
+#include "No.hpp"
 
 struct List {
     No* cabeca = nullptr;
