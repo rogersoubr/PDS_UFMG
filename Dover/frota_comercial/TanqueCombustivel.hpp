@@ -1,3 +1,6 @@
+#ifndef TANQUECOMBUSTIVEL_HPP
+#define TANQUECOMBUSTIVEL_HPP
+
 #include <string>
 #include <iostream>
 
@@ -9,4 +12,7 @@ class TanqueCombustivel {
         TanqueCombustivel(double capacidadeMaxima, double nivelAtual);
         void abastecer(double litros);
         void gastar(double litros);
+        double getNivelAtual() const;
 };
+
+#endif

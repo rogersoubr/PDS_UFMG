@@ -14,3 +14,7 @@ void TanqueCombustivel::gastar(double litros){
     std::cout<<"Bebeu "<<litros<<" litros visse"<<std::endl;
     this->_nivelAtual = _nivelAtual-litros;
 }
+
+double TanqueCombustivel::getNivelAtual() const{
+    return _nivelAtual;
+};
